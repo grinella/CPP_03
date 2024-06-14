@@ -1,6 +1,6 @@
 flags = -Wall -Wextra -Werror -std=c++98
 
-name=Now_we’re_talking
+name=Replay
 
 all:
 	@clear
