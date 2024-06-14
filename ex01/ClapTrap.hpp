@@ -13,6 +13,7 @@ class ClapTrap {
     public:
         ClapTrap();
         ClapTrap(const std::string &Name);
+        ClapTrap(const ClapTrap &src); // copia
         ~ClapTrap();
 
         void attack(const std::string& target);

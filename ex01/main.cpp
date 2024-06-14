@@ -1,24 +1,23 @@
 #include "ClapTrap.hpp"
 
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+
 int main() {
-    ClapTrap Fuuee("Fuuee");
-    ClapTrap Fein("Fein");
+    ClapTrap clap("Jasmine");
+    ScavTrap scav("Zehra");
 
     std::cout << std::endl;
+    clap.attack("Luigi");
+    scav.attack("Gabriele");
 
-    Fuuee.attack("Fein");
+    clap.takeDamage(5);
+    scav.takeDamage(15);
 
-    std::cout << std::endl;
+    clap.beRepaired(3);
+    scav.beRepaired(20);
 
-    Fein.takeDamage(5);
-
-    std::cout << std::endl;
-
-    Fuuee.beRepaired(3);
-
-    std::cout << std::endl;
-
-    Fuuee.attack("Fein");
+    scav.guardGate();
 
     std::cout << std::endl;
 
