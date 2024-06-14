@@ -1,6 +1,6 @@
 flags = -Wall -Wextra -Werror -std=c++98
 
-name=Now_we’re_talking
+name=Serena_ewew
 
 all:
 	@clear
