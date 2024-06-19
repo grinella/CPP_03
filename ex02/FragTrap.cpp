@@ -16,7 +16,7 @@ FragTrap::FragTrap(const std::string &Name) {
     std::cout << "FragTrap " << Name << " created." << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap &src) {
+FragTrap::FragTrap(const FragTrap &src): ClapTrap(src) {
     *this = src;
     std::cout << "FragTrap copy constructor called." << std::endl;
 }
@@ -36,6 +36,23 @@ void FragTrap::attack(const std::string &target) {
         EnergyPoints--;
     } else {
         std::cout << "FragTrap " << Name << " can't attack!" << std::endl;
+    }
+}
+
+void FragTrap::takeDamage(unsigned int amount) {
+    HitPoints -= amount;
+    std::cout << "FragTrap " << Name << " takes " << amount 
+              << " points of damage!" << std::endl;
+}
+
+void FragTrap::beRepaired(unsigned int amount) {
+    if (EnergyPoints > 0 && HitPoints > 0) {
+        HitPoints += amount;
+        std::cout << "FragTrap " << Name << " repairs itself, gaining " 
+                  << amount << " hit points!" << std::endl;
+        EnergyPoints--;
+    } else {
+        std::cout << "FragTrap " << Name << " can't repair itself!" << std::endl;
     }
 }
 

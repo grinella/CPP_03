@@ -16,7 +16,7 @@ ScavTrap::ScavTrap(const std::string &Name) {
     std::cout << "ScavTrap " << Name << " created." << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &src) {
+ScavTrap::ScavTrap(const ScavTrap &src): ClapTrap(src) {
     *this = src;
     std::cout << "ScavTrap copy constructor called." << std::endl;
 }
@@ -32,6 +32,23 @@ void ScavTrap::attack(const std::string &target) {
         EnergyPoints--;
     } else {
         std::cout << "ScavTrap " << Name << " can't attack!" << std::endl;
+    }
+}
+
+void ScavTrap::takeDamage(unsigned int amount) {
+    HitPoints -= amount;
+    std::cout << "ScavTrap " << Name << " takes " << amount 
+              << " points of damage!" << std::endl;
+}
+
+void ScavTrap::beRepaired(unsigned int amount) {
+    if (EnergyPoints > 0 && HitPoints > 0) {
+        HitPoints += amount;
+        std::cout << "ScavTrap " << Name << " repairs itself, gaining " 
+                  << amount << " hit points!" << std::endl;
+        EnergyPoints--;
+    } else {
+        std::cout << "ScavTrap " << Name << " can't repair itself!" << std::endl;
     }
 }
 

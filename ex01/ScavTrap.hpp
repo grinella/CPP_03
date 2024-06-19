@@ -11,6 +11,8 @@ class ScavTrap: public ClapTrap {
 
         void attack(const std::string& target);
         void guardGate();  // Nuova funzione specifica di ScavTrap
+        void takeDamage(unsigned int amount);
+        void beRepaired(unsigned int amount);
 
         ScavTrap &operator=(const ScavTrap &src);
 };
